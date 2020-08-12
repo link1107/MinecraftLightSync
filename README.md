@@ -1,4 +1,4 @@
-# MineLightSyns
+# MinecraftLightSyns
 
 [![GitHub license](https://img.shields.io/github/license/link1107/MinecraftLightSync)](https://github.com/link1107/MinecraftLightSync)
 
