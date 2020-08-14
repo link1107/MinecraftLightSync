@@ -31,11 +31,9 @@ public class Main extends JavaPlugin implements Listener {
         Player player = getServer().getPlayer(username); //Получаем объект игрока
         Location player_cords = player.getLocation(); //Получаем координаты игрока
         Location top_block_cords = new Location(player_cords.getWorld(), player_cords.getX(), player_cords.getY() + 1, player_cords.getZ()); //Координаты блока с нашей головой - это на 1 выше, чем координаты игрока
-        //Если успешно получили координаты игрока...
-        if (top_block_cords != null) {
-            int light_level = top_block_cords.getBlock().getLightLevel(); //Получаем уровень освещенности блока с головой игрока
-            sender.sendMessage(String.valueOf(light_level)); //Отправляем этот уровень освещенности отправителю команды (в нашем проекте это будет программа на питоне, которая будет вызывать команды через rcon)
-        }
+        int light_level = top_block_cords.getBlock().getLightLevel(); //Получаем уровень освещенности блока с головой игрока
+        sender.sendMessage(String.valueOf(light_level)); //Отправляем этот уровень освещенности отправителю команды (в нашем проекте это будет программа на питоне, которая будет вызывать команды через rcon)
+        
 
         return true; //Выходим
 
