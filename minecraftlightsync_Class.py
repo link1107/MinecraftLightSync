@@ -12,6 +12,12 @@ class MinecraftLightSync:
     """
         ### MinecraftLightSync
 
+            :param str `rcon_ip`: RCON-ip
+            :param int `rcon_port`: RCON-port
+            :param str `rcon_pass`: RCON-pass
+            :param str `player_name`: Имя игрока в майне
+            :param str `bridge_ip`: Подключение к Bridge
+
             :param bool `light_status`: Состояние лампочки 
             :default = False:
 
