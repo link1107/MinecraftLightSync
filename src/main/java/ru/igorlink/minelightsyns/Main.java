@@ -25,12 +25,9 @@ public class Main extends JavaPlugin {
             }
 
             Location top_block_cords = player.getEyeLocation(); //Координаты блока с нашей головой - это на 1 выше, чем координаты игрока
-            //Если успешно получили координаты игрока...
-            if (top_block_cords != null) {
-                byte light_level = top_block_cords.getBlock().getLightLevel(); //Получаем уровень освещенности блока с головой игрока
-                sender.sendMessage(String.valueOf(light_level)); //Отправляем этот уровень освещенности отправителю команды (в нашем проекте это будет программа на питоне, которая будет вызывать команды через rcon)
-            }
-            return false;
+            byte light_level = top_block_cords.getBlock().getLightLevel(); //Получаем уровень освещенности блока с головой игрока
+            sender.sendMessage(String.valueOf(light_level)); //Отправляем этот уровень освещенности отправителю команды (в нашем проекте это будет программа на питоне, которая будет вызывать команды через rcon)
+            return true;
         });
     }
 }
