@@ -19,7 +19,7 @@ public class Main extends JavaPlugin {
             //Если игрок с указанным ником не найден, возвращаем код ошибки E1
             String username = args[0];
             Player player = getServer().getPlayer(username); //Получаем объект игрока
-            if (player == null || !player.isOnline()) {
+            if (player == null || !player.isOnline()) {//может случиться так, что какой-то говноплагин держит объект даже при выходе, лучше сделать еще проверку на онлайн
                 sender.sendMessage("E1");
                 return false;
             }
