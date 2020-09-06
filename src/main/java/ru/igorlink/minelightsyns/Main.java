@@ -1,9 +1,7 @@
 package ru.igorlink.minelightsyns;
 
-import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
-import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -17,7 +15,6 @@ public class Main extends JavaPlugin implements Listener {
         if (args.length > 1) {
             sender.sendMessage("E0");
             return true; //Выходим
-
         }
 
         //Если игрок с указанным ником не найден, возвращаем код ошибки E1
@@ -25,17 +22,17 @@ public class Main extends JavaPlugin implements Listener {
         if (getServer().getPlayer(username) == null) {
             sender.sendMessage("E1");
             return true; //Выходим
-
         }
 
-        Player player = getServer().getPlayer(username); //Получаем объект игрока
-        Location top_block_cords = player.getEyeLocation(); //Получаем координаты головы игрока
-        int light_level = top_block_cords.getBlock().getLightLevel(); //Получаем уровень освещенности блока с головой игрока
-        sender.sendMessage(String.valueOf(light_level)); //Отправляем этот уровень освещенности отправителю команды (в нашем проекте это будет программа на питоне, которая будет вызывать команды через rcon)
-        
+        //Получаем уровень освещенности блока с головой игрока
+        final int lightLevel = getServer().getPlayer(username)
+                .getEyeLocation()
+                .getBlock()
+                .getLightLevel();
 
+        //Отправляем этот уровень освещенности отправителю команды (в нашем проекте это будет программа на питоне, которая будет вызывать команды через rcon)
+        sender.sendMessage(String.valueOf(lightLevel));
         return true; //Выходим
-
     }
 
 }
