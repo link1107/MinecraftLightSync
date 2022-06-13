@@ -10,21 +10,21 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class Main extends JavaPlugin implements Listener {
     // Коды ошибок, т.к. хардкор нужно выносить в константы
-    private static String ERROR_E0 = "E0";
-    private static String ERROR_E1 = "E1";
+    private static final String ERROR_E0 = "E0";
+    private static final String ERROR_E1 = "E1";
 
     //При вызове нашей команды
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (args == null || args.length != 1) { // Нужен только один аргумент
-            log(ERROR_E0);
+            log(ERROR_E0, sender);
             return true;
         }
 
         //Если игрок с указанным ником не найден, возвращаем код ошибки E1
         String username = args[0];
         if (getServer().getPlayer(username) == null) {
-            log(ERROR_E1);
+            log(ERROR_E1, sender);
             return true;
         }
 
@@ -32,14 +32,15 @@ public class Main extends JavaPlugin implements Listener {
         Location top_block_cords = player.getEyeLocation(); //Получаем координаты головы игрока
         int light_level = top_block_cords.getBlock().getLightLevel(); //Получаем уровень освещенности блока с головой игрока
         sender.sendMessage(String.valueOf(light_level)); //Отправляем этот уровень освещенности отправителю команды (в нашем проекте это будет программа на питоне, которая будет вызывать команды через rcon)
-        
+
 
         return true; //Выходим
 
     }
 
+
     // Функция для логирования
-    private static void log(String message) {
+    private static void log(String message, CommandSender sender) {
         if (message != null) {
             String messageLog;
             switch (message) {

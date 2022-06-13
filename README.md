@@ -8,7 +8,7 @@
 ## Requirements
 
 ##### Compiling requirements:
->- JDK 1.8
+>- JDK 1.17
 >- Gradle
 >- Git/Github (Optional)
 
@@ -19,8 +19,8 @@
 >- Execute command "gradlew build"
 >- Execute command "pip install -r requirements.txt"
 ##### Running requirements:
->- Java 1.8
->- TacoSpigot, PaperSpigot or Spigot (1.7.10, 1.8.X, 1.9.X, 1.10.X, 1.11.X, 1.12.X)<br>
+>- Java 1.17
+>- TacoSpigot, PaperSpigot or Spigot (1.19)<br>
 
 ##### Video:
 
