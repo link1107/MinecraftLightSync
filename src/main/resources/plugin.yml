@@ -1,7 +1,8 @@
-name: MineLightSync
+name: MineLightSyns
+version: '0.2'
 main: ru.igorlink.minelightsyns.Main
-author: "Igor Link"
-version: "0.1 Beta Alpha"
+api-version: 1.19
+authors: ["Igor Link", "ArtyomKor"]
 commands:
   lightsync:
     description: "Get LightLevel"
